@@ -17,11 +17,6 @@ variable "instance_type" {
   default     = "t2.micro"
 }
 
-# variable "availability_zones" {
-#   description = "A list of one or more availability zones for the group."
-#   type = list(string)
-# }
-
 variable "desired_capacity" {
   description = "Desired number of instances in the Auto Scaling Group"
   default     = 2
@@ -42,6 +37,9 @@ variable "vpc_zone_identifier" {
   type = list(string)
 }
 
+variable "launch_template_name" {
+  
+}
 variable "create_launch_template" {
   description = "Create a launch template"
   default     = true
@@ -57,24 +55,5 @@ variable "tags" {
   type = map(string)
 }
 
-# variable "launch_template_id" {
-#   description = "ID of the launch template to use for the Auto Scaling Group"
-# }
+variable "target_group_arn" {}
 
-# variable "launch_template_name" {
-#   description = "Name of launch template to be created"
-#   type = string
-# }
-
-
-# variable "create_alb" {
-#   description = "Create an Application Load Balancer (ALB)"
-#   default     = false
-# }
-
-
-
-# variable "alb_subnet_ids" {
-#   description = "List of subnet IDs for the ALB"
-#   type        = list(string)
-# }

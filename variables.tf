@@ -1,28 +1,16 @@
-# autoscaling_module.tf
-
 variable "name" {
   description = "Name of the Auto Scaling Group"
 }
 
-# variable "launch_template_version" {
-#   description = "Version of the launch template to use for the Auto Scaling Group"
-#   default     = "$Latest"
-# }
-
 variable "image_id" {
   description = "The AMI from which to launch the instance	"
-  type = string  
+  type        = string
 }
 
 variable "instance_type" {
   description = "EC2 instance type for the Auto Scaling Group"
   default     = "t2.micro"
 }
-
-# variable "availability_zones" {
-#   description = "A list of one or more availability zones for the group."
-#   type = list(string)
-# }
 
 variable "desired_capacity" {
   description = "Desired number of instances in the Auto Scaling Group"
@@ -41,22 +29,13 @@ variable "min_size" {
 
 variable "vpc_zone_identifier" {
   description = "A list of subnet IDs to launch resources in."
-  type = list(string)
+  type        = list(string)
 }
 
 variable "create_launch_template" {
   description = "Create a launch template"
   default     = true
 }
-
-# variable "launch_template_id" {
-#   description = "ID of the launch template to use for the Auto Scaling Group"
-# }
-
-# variable "launch_template_name" {
-#   description = "Name of launch template to be created"
-#   type = string
-# }
 
 variable "vpc_security_group_ids" {
   description = "List of security group IDs for the ALB"
@@ -65,17 +44,18 @@ variable "vpc_security_group_ids" {
 
 variable "tags" {
   description = "A map of tags to assign to resources"
-  type = map(string)
+  type        = map(string)
 }
 
-# variable "create_alb" {
-#   description = "Create an Application Load Balancer (ALB)"
-#   default     = false
-# }
-
-
-
-# variable "alb_subnet_ids" {
-#   description = "List of subnet IDs for the ALB"
-#   type        = list(string)
-# }
+variable "vpc_id" {
+  type = string
+}
+variable "public_subnets" {
+  type = list(string)
+}
+variable "security_group" {
+}
+variable "target_group_arn" {}
+variable "listener_port" {
+  
+}
