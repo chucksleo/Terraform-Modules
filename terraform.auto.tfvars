@@ -10,7 +10,7 @@ vpc_security_group_ids = ["sg-0e5a5cafdf06a67d1", "sg-06096157a53e31bf8"]
 tags = {
   Environment = "dev"
   Project     = "Dataiku"
-  propagate_at_launch = true
+  # propagate_at_launch = true
 }
 vpc_id = "vpc-02fdc3e51f053b3d2"
 public_subnets = ["subnet-0ff652dc584e4750a", "subnet-0fdf8d43455768e16", "subnet-0d8efafb761417234" ]
